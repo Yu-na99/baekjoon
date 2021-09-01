@@ -1,0 +1,14 @@
+dx=[0, -1, -1, 0, 1, 1, 1, 0, -1] # 위, 왼위, 왼, 왼아, 아, 오아, 오, 오위
+dy=[0, 0, -1, -1, -1, 0, 1, 1, 1]
+
+FOUR=4
+data=[list(map(int, input().split())) for _ in range(FOUR)]
+board=[[0]*FOUR for _ in range(FOUR)]
+
+for d in data:
+    count=0
+    for j in range(0, len(d), 2):
+        board[i][count]=(d[i][j], d[i][j+1])
+        count+=1
+
+print(board)
