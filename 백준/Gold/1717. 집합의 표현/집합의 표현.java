@@ -26,20 +26,15 @@ public class Main {
 
     static void union(int a, int b){
         int aa = find(a);
-        setUnion(b, aa);
+        int bb = find(b);
+        if(aa != bb) num[bb]=aa;
     }
-    static void setUnion(int idx, int data){
-        int result = num[idx];
-        num[idx]=data;
-        if(result == idx) return;
 
-        setUnion(result, data);
-    }
     static int find(int n){
         if(num[n] == n){
             return n;
         } else {
-            return find(num[n]);
+            return num[n] = find(num[n]);
         }
     }
 }
